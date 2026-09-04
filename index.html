@@ -113,26 +113,37 @@
         </button>
 
         <figure id="memory" class="memory" hidden>
-          <svg class="memory__svg" viewBox="0 0 300 280" role="img" aria-label="Sasa no aniversário, sorrindo com o bolo">
+          <svg class="memory__svg" viewBox="0 0 340 360" role="img" aria-label="Vocês dois no aniversário">
             <defs>
               <clipPath id="memHeart">
-                <path d="M150 262 C 28 175, -8 88, 70 38 C 108 8, 150 36, 150 78 C 150 36, 192 8, 230 38 C 308 88, 272 175, 150 262 Z" />
+                <path d="M170 344 C 18 228, -12 118, 74 42 C 118 4, 170 26, 170 62 C 170 26, 222 4, 266 42 C 352 118, 322 228, 170 344 Z" />
               </clipPath>
+              <filter id="heartGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#00e676" flood-opacity="0.85" />
+              </filter>
             </defs>
             <image
               href="assets/foto.jpg"
-              width="300"
-              height="280"
-              preserveAspectRatio="xMidYMid slice"
+              x="8"
+              y="6"
+              width="324"
+              height="430"
+              preserveAspectRatio="xMidYMin slice"
               clip-path="url(#memHeart)"
             ></image>
             <path
-              d="M150 262 C 28 175, -8 88, 70 38 C 108 8, 150 36, 150 78 C 150 36, 192 8, 230 38 C 308 88, 272 175, 150 262 Z"
+              d="M170 344 C 18 228, -12 118, 74 42 C 118 4, 170 26, 170 62 C 170 26, 222 4, 266 42 C 352 118, 322 228, 170 344 Z"
               fill="none"
               stroke="#00e676"
-              stroke-width="5"
+              stroke-width="6"
+              filter="url(#heartGlow)"
             />
           </svg>
+          <figcaption class="memory__caption">
+            1 aninho deste dia incrível, e que venham muitos outros momentos
+            tão preciosos quanto este.
+          </figcaption>
+        </figure>
           <figcaption class="memory__caption">
             1 aninho deste dia incrível, e que venham muitos outros momentos
             tão preciosos quanto este.

@@ -405,7 +405,7 @@ button {
 }
 
 .memory {
-  width: min(86vw, 320px);
+  width: min(92vw, 360px);
 }
 
 .memory[hidden] {
@@ -422,10 +422,16 @@ button {
 }
 
 .memory__svg {
-  width: min(86vw, 300px);
+  width: min(92vw, 360px);
   height: auto;
-  filter: drop-shadow(0 0 24px rgba(0, 230, 118, 0.5));
+  filter: drop-shadow(0 0 28px rgba(0, 230, 118, 0.55));
   overflow: visible;
+  animation: heartFloat 4.2s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .memory__caption {
