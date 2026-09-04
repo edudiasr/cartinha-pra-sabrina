@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#050805" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Uma cartinha de aniversário para a Sasa." />
+    <title>Pra você, Sasa 💚</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💚%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="bg__image"></div>
+      <div class="bg__tint"></div>
+      <div class="bg__vignette"></div>
+      <div class="bg__grain"></div>
+    </div>
+
+    <canvas id="fx" class="fx" aria-hidden="true"></canvas>
+    <div id="heart-field" class="heart-field" aria-hidden="true"></div>
+
+    <div id="gate" class="gate">
+      <div class="gate__glow"></div>
+      <div class="gate__inner">
+        <p class="gate__whisper">ei, Sasa...</p>
+        <h1 class="gate__title">Feliz aniversário</h1>
+        <p class="gate__sub">tem uma cartinha esperando por você</p>
+        <button id="open-letter" class="gate__btn" type="button">
+          <span class="gate__btn-heart">❤</span>
+          <span>abrir a cartinha</span>
+        </button>
+        <p class="gate__hint">toque no coração</p>
+      </div>
+    </div>
+
+    <main id="page" class="page" hidden>
+      <header class="hero">
+        <p class="hero__kicker">05.09 · um dia só seu</p>
+        <h1 class="hero__name">Sasa</h1>
+        <p class="hero__line">minha garota de olhos verdes</p>
+        <div class="hero__rule"></div>
+      </header>
+
+      <section class="letter-section" aria-label="Cartinha">
+        <article class="letter">
+          <figure class="letter__photo">
+            <img src="assets/foto.jpg" alt="Sasa no aniversário, sorrindo com o bolo" />
+            <figcaption>você, linda, no seu dia</figcaption>
+          </figure>
+
+          <p class="letter__open">
+            Sasa, quero te desejar um
+            <em>feliz aniversário</em> muito abençoado, muita felicidade pra ti
+            e te desejo tudo de bom, sempre. Espero que você aproveite muito o
+            seu dia e que nunca se esqueça que o seu dia não é só hoje, mas sim
+            todos os dias. <span class="emoji">❤️</span>
+          </p>
+
+          <p>
+            Você é uma garota incrível, maravilhosa, esperta e forte. Eu tenho
+            tanto orgulho de ti e da pessoa que você é, e de tudo que você
+            ainda vai se tornar. Que venham muitos e muitos aniversários que
+            possamos passar juntos, mesmo que às vezes não seja pessoalmente,
+            mas sempre estando na vidinha um do outro. <span class="emoji">🥹💚</span>
+          </p>
+
+          <p>
+            Eu te amo muito, minha garotinha. Pode contar comigo pra tudo que
+            você precisar, sempre. Eu sempre vou estar aqui por você. Nunca vou
+            me esquecer da pessoa incrível que você é pra mim e de toda a
+            importância que tu tem na minha vida.
+          </p>
+
+          <p class="letter__love">Eu te amo muito, Sasa. <span class="emoji">❤️</span></p>
+
+          <p>
+            Que Deus abençoe muito a sua vida, seus caminhos e tudo aquilo que
+            nos aguarda lá na frente. <span class="emoji">🙏💚</span>
+          </p>
+        </article>
+      </section>
+
+      <section class="balloon-section" aria-label="Memória secreta">
+        <p class="balloon__hint" id="balloon-hint">tem um balãozinho escondido aqui embaixo… toca nele</p>
+
+        <button id="balloon" class="balloon" type="button" aria-expanded="false" aria-controls="memory">
+          <svg class="balloon__svg" viewBox="0 0 120 170" aria-hidden="true">
+            <defs>
+              <radialGradient id="balloonFill" cx="35%" cy="28%">
+                <stop offset="0%" stop-color="#9dffc4" />
+                <stop offset="42%" stop-color="#00e676" />
+                <stop offset="100%" stop-color="#067a3c" />
+              </radialGradient>
+            </defs>
+            <path
+              fill="url(#balloonFill)"
+              d="M60 148 C 18 108, 4 68, 28 36 C 44 16, 60 28, 60 50 C 60 28, 76 16, 92 36 C 116 68, 102 108, 60 148 Z"
+            />
+            <ellipse cx="44" cy="52" rx="8" ry="14" fill="rgba(255,255,255,0.38)" transform="rotate(-18 44 52)" />
+            <text x="60" y="88" text-anchor="middle" font-size="22" fill="#041108">❤</text>
+            <path d="M60 148 L54 158 L66 158 Z" fill="#00c853" />
+            <path d="M60 158 C 70 178, 50 188, 60 170" fill="none" stroke="rgba(0,230,118,0.55)" stroke-width="2" />
+          </svg>
+        </button>
+
+        <figure id="memory" class="memory" hidden>
+          <svg class="memory__svg" viewBox="0 0 300 280" role="img" aria-label="Sasa em um momento especial à mesa">
+            <defs>
+              <clipPath id="memHeart">
+                <path d="M150 262 C 28 175, -8 88, 70 38 C 108 8, 150 36, 150 78 C 150 36, 192 8, 230 38 C 308 88, 272 175, 150 262 Z" />
+              </clipPath>
+            </defs>
+            <image
+              href="assets/balao.jpg"
+              width="300"
+              height="280"
+              preserveAspectRatio="xMidYMin slice"
+              clip-path="url(#memHeart)"
+            ></image>
+            <path
+              d="M150 262 C 28 175, -8 88, 70 38 C 108 8, 150 36, 150 78 C 150 36, 192 8, 230 38 C 308 88, 272 175, 150 262 Z"
+              fill="none"
+              stroke="#00e676"
+              stroke-width="5"
+            />
+          </svg>
+          <figcaption class="memory__caption">
+            1 aninho deste dia incrível, e que venham muitos outros momentos
+            tão preciosos quanto este.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="countdown-section" aria-label="Próximo presente">
+        <p class="countdown__lead">
+          Seu próximo presentinho só vai ser revelado quando esse cronômetro
+          zerar <span>;)</span>
+        </p>
+        <div id="countdown" class="countdown" role="timer" aria-live="polite">
+          <div class="countdown__cell">
+            <span id="cd-h" class="countdown__num">00</span>
+            <span class="countdown__label">horas</span>
+          </div>
+          <span class="countdown__colon">:</span>
+          <div class="countdown__cell">
+            <span id="cd-m" class="countdown__num">00</span>
+            <span class="countdown__label">min</span>
+          </div>
+          <span class="countdown__colon">:</span>
+          <div class="countdown__cell">
+            <span id="cd-s" class="countdown__num">00</span>
+            <span class="countdown__label">seg</span>
+          </div>
+        </div>
+        <p id="gift-unlocked" class="gift" hidden>
+          presentinho liberado, meu amor. agora é a sua vez de brilhar. <span>💚</span>
+        </p>
+      </section>
+
+      <footer class="footer">
+        <p>com todo o meu amor,</p>
+        <p class="footer__sign">pra sempre seu</p>
+      </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
